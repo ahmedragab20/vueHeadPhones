@@ -1,6 +1,6 @@
 <template>
   <div class="banner">
-    <video src="@/assets/statick/banner.mp4" muted autoplay>
+    <video src="@/assets/statick/banner.mp4" autoplay muted>
       Your Browsser doesn't support the videos
     </video>
   </div>
@@ -18,7 +18,6 @@ export default {};
     object-fit: cover;
     height: 100%;
     width: 100%;
-    pointer-events: none;
   }
 }
 @media (max-width: 768px) {
