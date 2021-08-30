@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/mr-cartoon/" : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/vueHeadPhones/" : "/",
 };

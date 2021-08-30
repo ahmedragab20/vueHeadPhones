@@ -1,6 +1,6 @@
 <template>
   <div class="banner">
-    <video src="@/assets/statick/banner.mp4" muted autoplay loop>
+    <video src="@/assets/statick/banner.mp4" muted autoplay>
       Your Browsser doesn't support the videos
     </video>
   </div>
