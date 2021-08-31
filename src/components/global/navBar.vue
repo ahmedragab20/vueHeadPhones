@@ -8,9 +8,15 @@
       </div>
       <div class="links" :class="{ active: isActive }">
         <ul>
-          <router-link to="/" exact>Home</router-link>
-          <router-link to="/Cart">Cart</router-link>
-          <a href="#">Help?</a>
+          <li>
+            <router-link to="/" exact>Home</router-link>
+          </li>
+          <li>
+            <router-link to="/Cart">Cart</router-link>
+          </li>
+          <li>
+            <a href="#">Help?</a>
+          </li>
         </ul>
       </div>
       <div
@@ -43,7 +49,11 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 9;
+  -webkit-backdrop-filter: blur(8px);
+  -moz-backdrop-filter: blur(8px);
+  -ms-backdrop-filter: blur(8px);
+  -o-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 
   .container {
@@ -64,13 +74,14 @@ nav {
       min-height: 10vh;
       display: flex;
       justify-content: flex-end;
-      align-items: flex-end;
+      align-items: center;
 
       ul {
         width: 50%;
         display: flex;
         justify-content: space-around;
         align-items: center;
+        z-index: 999;
 
         a {
           padding: 7px 14px;

@@ -18,6 +18,8 @@ export default {};
     object-fit: cover;
     height: 100%;
     width: 100%;
+    pointer-events: none;
+    z-index: 0;
   }
 }
 @media (max-width: 768px) {
