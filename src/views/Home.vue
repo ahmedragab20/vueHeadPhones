@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <to-top />
     <home-banner />
     <poster-1 />
     <poster-2 />
@@ -15,6 +16,7 @@
 
 <script>
 import db from "@/db/db.js";
+import toTop from "@/components/global/toTop.vue";
 
 import homeBanner from "@/components/home/homeBanner.vue";
 import poster1 from "@/components/home/poster-1.vue";
@@ -29,16 +31,20 @@ export default {
       db,
     };
   },
-  components: { homeBanner, poster1, poster2, products, poster3 },
+  components: { toTop, homeBanner, poster1, poster2, products, poster3 },
 };
 </script>
 
 <style lang="scss" scoped>
-.products {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
+.home {
+  position: relative;
+
+  .products {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }
 </style>

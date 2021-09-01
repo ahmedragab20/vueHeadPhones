@@ -1,16 +1,21 @@
 <template>
-  <div class="total" v-if="totalPrice !== 0">
-    <div class="container">
-      <div class="price">
-        <h2>total price:</h2>
-        <h3>{{ totalPrice }}$</h3>
+  <transition name="totalPrice" appear mode="out-in">
+    <div class="total" v-if="totalPrice !== 0">
+      <div class="container">
+        <div class="price">
+          <h2>total price:</h2>
+          <h3>{{ totalPrice }}$</h3>
+        </div>
+        <button>Paymen Methods <i class="bi bi-arrow-right"></i></button>
       </div>
-      <button>Paymen Methods <i class="bi bi-arrow-right"></i></button>
     </div>
-  </div>
-  <div class="waiting" v-if="totalPrice === 0">
-    <h4>Nothing Yet..</h4>
-  </div>
+  </transition>
+
+  <transition name="waiting" mode="out-in" appear>
+    <div class="waiting text-center" v-if="totalPrice === 0">
+      <h4>Nothing Yet..</h4>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -42,7 +47,6 @@ export default {
     }
 
     h3 {
-      color: #fff;
       font-size: 2.5rem;
       letter-spacing: 1px;
     }
@@ -63,17 +67,19 @@ export default {
   }
 }
 
-.waiting {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  img {
-    width: 500px;
-  }
+.totalPrice-enter-from,
+.totalPrice-leave-to,
+.waiting-enter-from,
+.waiting-leave-to {
+  opacity: 0;
+  transform: scale(0);
 }
-
+.totalPrice-enter-active,
+.totalPrice-leave-active,
+.waiting-enter-active,
+.waiting-leave-active {
+  transition: all 0.3s ease-in-out;
+}
 @media (max-width: 768px) {
   .total {
     .price {
@@ -89,11 +95,6 @@ export default {
       padding: 4px 8px;
       min-width: 160px;
       height: 50px;
-    }
-  }
-  .waiting {
-    img {
-      width: 200px;
     }
   }
 }

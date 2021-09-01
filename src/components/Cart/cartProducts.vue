@@ -1,34 +1,32 @@
 <template>
-  <transition name="switching" mode="out-in">
-    <div class="product" v-if="item.quantity > 0">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="image">
-              <img :src="item.img" :alt="item.name" />
-            </div>
+  <div class="product" v-if="item.quantity > 0">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="image">
+            <img :src="item.img" :alt="item.name" />
           </div>
-          <div class="col-lg-6">
-            <div class="content">
-              <div class="center">
-                <h6>Quantity: {{ item.quantity }}</h6>
-                <div class="buttons">
-                  <button @click="addToCart()" class="plus">
-                    <i class="bi bi-plus"></i>
-                  </button>
-                  <button @click="removeFromCart">-</button>
-                </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="content">
+            <div class="center">
+              <h6>Quantity: {{ item.quantity }}</h6>
+              <div class="buttons">
+                <button @click="addToCart()" class="plus">
+                  <i class="bi bi-plus"></i>
+                </button>
+                <button @click="removeFromCart">-</button>
               </div>
-              <div class="total">
-                <h5>total price</h5>
-                <p>{{ productPrice }} $</p>
-              </div>
+            </div>
+            <div class="total">
+              <h5>total price</h5>
+              <p>{{ productPrice }} $</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </transition>
+  </div>
 </template>
 
 <script>
@@ -112,6 +110,7 @@ export default {
     }
   }
 }
+/*
 .switching-enter-from,
 .switching-leave-to {
   opacity: 0;
@@ -119,8 +118,9 @@ export default {
 }
 .switching-enter-active,
 .switching-leave-active {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
+*/
 @media (max-width: 555px) {
   .content {
     flex-direction: column !important;

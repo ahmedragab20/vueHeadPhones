@@ -19,12 +19,16 @@ export default {};
     height: 100%;
     width: 100%;
     pointer-events: none;
-    z-index: 0;
   }
 }
 @media (max-width: 768px) {
   .banner {
-    height: 70vh;
+    height: 65vh;
+  }
+}
+@media (max-width: 555px) {
+  .banner {
+    height: 40vh;
   }
 }
 </style>

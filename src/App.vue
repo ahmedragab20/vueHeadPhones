@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <nav-bar />
-    </div>
+    <on-load />
+
+    <nav-bar />
     <router-view v-slot="{ Component }">
       <transition name="rout" mode="out-in">
         <component :is="Component"></component>
@@ -12,10 +12,13 @@
   </div>
 </template>
 <script>
+import onLoad from "@/components/global/onload.vue";
+
 import navBar from "@/components/global/navBar.vue";
 import mainFooter from "@/components/global/mainFooter.vue";
+
 export default {
-  components: { navBar, mainFooter },
+  components: { onLoad, navBar, mainFooter },
   mounted() {
     return setInterval(this.$store.commit("updateCartStorage"));
   },

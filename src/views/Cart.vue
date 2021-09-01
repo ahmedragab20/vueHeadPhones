@@ -1,6 +1,6 @@
 <template>
   <div class="cart mt-5">
-    <transition-group tag="div" name="list" appear>
+    <transition-group name="cart-component" appear mode="out-in">
       <cart-component
         v-for="item in items"
         :key="item.id"
@@ -8,7 +8,9 @@
       ></cart-component>
     </transition-group>
 
-    <total-price />
+    <transition name="total" mode="out-in" appear>
+      <total-price />
+    </transition>
   </div>
 </template>
 
@@ -35,14 +37,17 @@ export default {
   min-height: 100vh;
   padding-top: 10vh;
 
-  .list-enter-from,
-  .list-leave-to {
+  .cart-component-enter-from,
+  .cart-component-leave-to,
+  .total-enter-from,
+  .total-leave-to {
     opacity: 0.6;
     transform: scale(0.6);
   }
-  .list-enter-active,
-  .list-leave-active,
-  .list-move {
+  .cart-component-enter-active,
+  .cart-component-leave-active,
+  .total-enter-active,
+  .total-leave-active {
     transition: all 0.3s ease-in-out;
   }
 }
