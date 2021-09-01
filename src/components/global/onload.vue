@@ -30,7 +30,7 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 500;
-  background-color: #ffff;
+  background-color: #f2f2f2;
   img {
     position: fixed;
     top: 45%;
