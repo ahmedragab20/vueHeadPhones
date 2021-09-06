@@ -1,6 +1,6 @@
 <template>
   <div class="onload" v-if="!isload">
-    <img src="@/assets/global/onload.gif" width="150" />
+    <img src="@/assets/global/onLoad.gif" width="150" />
   </div>
 </template>
 <script>
@@ -30,7 +30,7 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 500;
-  background-color: #f2f2f2;
+  background-color: #ffff;
   img {
     position: fixed;
     top: 45%;

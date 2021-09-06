@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import db from "@/db/db.js";
+import db from "../../data/db";
 
 import homeBanner from "@/components/home/homeBanner.vue";
 import poster1 from "@/components/home/poster-1.vue";

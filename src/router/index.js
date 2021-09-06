@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/views/Home.vue";
 import Cart from "@/views/Cart.vue";
+import NotFound from "@/views/NotFound.vue";
 
 const routes = [
   {
@@ -12,6 +13,12 @@ const routes = [
     path: "/Cart",
     name: "Cart",
     component: Cart,
+  },
+  // 404 Error Page
+  {
+    path: "/:catchAll(.*)",
+    name: "NotFound",
+    component: NotFound,
   },
 ];
 

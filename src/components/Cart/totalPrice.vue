@@ -1,6 +1,6 @@
 <template>
   <transition name="totalPrice" appear mode="out-in">
-    <div class="total" v-if="totalPrice !== 0">
+    <div class="total" v-if="totalPrice">
       <div class="container">
         <div class="price">
           <h2>total price:</h2>
@@ -12,7 +12,7 @@
   </transition>
 
   <transition name="waiting" mode="out-in" appear>
-    <div class="waiting text-center" v-if="totalPrice === 0">
+    <div class="waiting text-center" v-if="!totalPrice">
       <h4>Nothing Yet..</h4>
     </div>
   </transition>
